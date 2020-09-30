@@ -49,10 +49,6 @@ p {
   margin: 0;
 }
 
-img {
-  width: 100%;
-}
-
 ol,
 ul,
 dl {
@@ -104,10 +100,11 @@ input,
 select,
 textarea {
   width: 100%;
-  padding: 0.4rem;
-  font-size: 1.2rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--borderRadius);
   border: 1px solid var(--borderColor);
-  margin-bottom: 1rem;
+  outline: none;
+  transition: 0.5s;
 }
 
 select {

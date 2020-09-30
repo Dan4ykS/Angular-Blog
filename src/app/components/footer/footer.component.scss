@@ -1,0 +1,13 @@
+footer {
+  background-color: var(--footerBgColor);
+  height: var(--footerHeight);
+  text-align: center;
+  color: var(--lightColor);
+  font-weight: 700;
+
+  span {
+    &:first-child {
+      margin-right: 5px;
+    }
+  }
+}
