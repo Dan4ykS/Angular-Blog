@@ -2,11 +2,6 @@
 @import "./styles/variables.scss";
 @import "./styles/flexWraps.scss";
 
-main {
-  margin-top: var(--headerHeight);
-  min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
-}
-
 .container {
   max-width: 1100px;
   padding: 0 1rem;

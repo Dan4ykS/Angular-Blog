@@ -10,11 +10,12 @@ header {
   .navbar {
     height: 100%;
     display: grid;
-    grid-template: 100%/ 1fr 4fr 1fr;
+    grid-template: 100%/ 1fr 4fr 0.3fr 0.7fr;
     align-items: center;
 
     &__logo,
-    &__auth {
+    &__auth,
+    &__theme {
       &:hover {
         color: var(--hoverColor);
         cursor: pointer;
@@ -24,15 +25,14 @@ header {
     &__logo {
       height: 100%;
       outline: none;
-      img {
-        height: 70%;
+      svg {
         transition: 0.3s;
       }
       .active {
         background-color: var(--darkColor);
         border-radius: 100%;
         box-shadow: 0 0 10px 0.2rem var(--darkColor);
-        transform: scale(1.2);
+        transform: scale(1.1);
         & + span {
           margin-left: 7px;
         }
@@ -71,12 +71,34 @@ header {
       }
     }
 
-    &__auth {
+    &__theme {
       justify-self: center;
+      position: relative;
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 0.2;
+        transform: translate(-50%, -50%);
+        transition: 0.5s all;
+        visibility: hidden;
+      }
+      .selectedTheme {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    &__auth {
       font-size: 22px;
+      justify-self: start;
+      align-items: flex-end;
       svg {
         margin-right: 3px;
         font-size: 25px;
+      }
+      span {
+        line-height: 1;
       }
     }
   }
@@ -85,7 +107,7 @@ header {
 @media (max-width: 575px) {
   header {
     .navbar {
-      grid-template: 100%/ 0.6fr 3fr 1fr;
+      grid-template: 100%/ 0.5fr 2fr 0.3fr 0.5fr;
 
       &__search {
         input {
@@ -97,9 +119,13 @@ header {
         }
       }
 
+      svg {
+        width: 20px;
+      }
+
       &__logo {
-        img {
-          height: 55%;
+        svg {
+          width: 25px;
         }
       }
 
@@ -107,6 +133,9 @@ header {
         font-size: 16px;
         svg {
           font-size: 18px;
+        }
+        span {
+          line-height: 1.3;
         }
       }
     }

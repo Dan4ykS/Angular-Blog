@@ -1,0 +1,15 @@
+main {
+  margin-top: var(--headerHeight);
+  min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
+  transition: 0.3s;
+}
+
+.darkTheme {
+  color: var(--lightColor);
+  background-color: var(--darkColor);
+}
+
+.lightTheme {
+  background-color: var(--lightColor);
+  color: var(--darkColor);
+}

@@ -1,1 +1,15 @@
-<button routerLink='post/25790'>Посмотреть пост</button>
+<ng-container *ngIf="postsService.posts$ | async ; else loading">
+  <div>{{ value }}</div>
+</ng-container>
+<ng-template #loading>
+  <div>Загрузка...</div>
+</ng-template>
+
+<button routerLink="post/25790">Посмотреть пост</button>
+
+<button>Добавить пост!</button>
+
+<div *ngFor="let post of postsService.posts$ | async">
+  <!-- <p *ngIf="!post">Загрузка...</p> -->
+  <p>{{ post | json }}</p>
+</div>

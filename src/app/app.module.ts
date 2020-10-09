@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,20 +12,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PostComponent } from './pages/post/post.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainComponent,
-    NotFoundComponent,
-    HeaderComponent,
-    FooterComponent,
-    PostComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SharedModule,
-  ],
+  declarations: [AppComponent, MainComponent, NotFoundComponent, HeaderComponent, FooterComponent, PostComponent],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, BrowserAnimationsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

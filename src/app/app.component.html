@@ -1,5 +1,10 @@
 <blog-header></blog-header>
-<main>
+<main
+  [class]="{
+    darkTheme: themeService.theme === 'dark',
+    lightTheme: themeService.theme === 'light'
+  }"
+>
   <div class="container">
     <router-outlet></router-outlet>
   </div>

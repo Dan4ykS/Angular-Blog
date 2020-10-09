@@ -1,24 +1,24 @@
 import { Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
 
+import { ThemeService } from 'src/app/shared/services/theme.service';
 @Component({
   selector: 'blog-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent implements OnInit {
   screenSize: number;
+  themeState: string;
 
-  constructor() {
-    this.screenSize = window.innerWidth
+  constructor(public themeService: ThemeService) {
+    this.screenSize = window.innerWidth;
   }
+
+  ngOnInit(): void {}
 
   @HostListener('window:resize', ['$event.target'])
-  onResize(target: Window) {
-    this.screenSize = target.innerWidth
+  private onResize(target: Window): void {
+    this.screenSize = target.innerWidth;
   }
-
-  ngOnInit(): void {
-  }
-
 }
